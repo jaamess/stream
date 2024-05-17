@@ -9,14 +9,24 @@ document.addEventListener('DOMContentLoaded', () => {
             summary = data;
 
             // Define the changeVideo function after loading the JSON
-            window.changeVideo = function (source, title, description) {
+            window.changeVideo = function (source, title, description, hasCustomSubtitles = false, subFile = '', subLabel = '') {
                 let video = document.getElementById('videoPlayer');
                 const shows = ['tv'];
-                if (!shows.some(tv => source.includes(tv))) {
-                    video.src = `https://vidsrc.to/embed/movie/${source}`;
+                let url = '';
+
+                // Check if the source is a TV show or a movie and construct the base URL
+                if (!shows.some(show => source.includes(show))) {
+                    url = `https://vidsrc.to/embed/movie/${source}`;
                 } else {
-                    video.src = `https://vidsrc.to/embed/${source}`;
+                    url = `https://vidsrc.to/embed/${source}`;
                 }
+
+                // If the video has custom subtitles, append the subtitle parameters to the URL
+                if (hasCustomSubtitles) {
+                    url += `?sub.file=${encodeURIComponent(subFile)}&sub.label=${encodeURIComponent(subLabel)}`;
+                }
+
+                video.src = url;
                 video.title = title;
 
                 // Update the video description
