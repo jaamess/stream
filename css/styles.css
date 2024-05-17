@@ -66,13 +66,6 @@ body.dark-mode {
     margin-right: 5px;
 }
 
-.video-container {
-    position: relative;
-    padding-top: 56.25%; /* 16:9 Aspect Ratio */
-    height: 0;
-    align-items: center;
-}
-
 iframe {
     position: absolute;
     top: 0;
@@ -144,11 +137,9 @@ iframe {
     background: #555;
 }
 
-
 .side-menu.collapsed {
     transform: translateX(-100%);
 }
-
 
 .side-menu h2 {
     margin-top: 0;
@@ -172,17 +163,21 @@ iframe {
 }
 
 .content {
-    align-items: center;
-    margin-left: 200px;
+    position: relative;
     padding: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     transition: margin-left 0.3s ease;
 }
 
-.content.collapsed {
-    margin-left: 0;
+.video-container {
+    position: relative;
+    padding-top: 56.25%; /* 16:9 Aspect Ratio */
+    width: 100%;
 }
 
-.fullScreen {
-    align-self: center;
-    margin-top: 10px;
+#fullScreen {
+    margin-top: 10px; /* Add margin to separate from the description */
+    align-self: center; /* Center horizontally */
 }
