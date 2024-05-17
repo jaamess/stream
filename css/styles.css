@@ -192,6 +192,24 @@ iframe {
 }
 
 #fullScreen {
-    margin-top: 10px; /* Add margin to separate from the description */
-    align-self: center; /* Center horizontally */
-}
+    background-color: #f2f2f2; /* Fundo cinza claro */
+    border: none;
+    color: #333; /* Texto cinza escuro */
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    margin-top: 10px; /* Margem superior de 10px */
+    transition-duration: 0.4s;
+    cursor: pointer;
+    border-radius: 5px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  #fullScreen:hover {
+    background-color: #ddd; /* Fundo cinza mais escuro ao passar o mouse */
+    color: black;
+  }  
