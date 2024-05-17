@@ -27,6 +27,32 @@
     <div class="side-menu" id="sideMenu">
         <h2>Escolha algo para assistir</h2>
         <ul class="scrollable">
+            <li onmouseover="changePoster('assets/cursed.jpg')" onmouseout="hidePoster()"
+                onclick="changeVideo('tt18077924', 'Poolman (2024)', 'poolman', false)">
+                Poolman (2024)
+                <div class="menu-poster">
+                    <img src="assets/cursed.jpg" alt="The Strangers Poster">
+                </div>
+            </li>
+            <li onmouseover="changePoster('assets/cursed.jpg')" onmouseout="hidePoster()"
+                onclick="changeVideo('tt21251236', 'Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3', 'xxx:3', false)">
+                Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3
+                <div class="menu-poster">
+                    <img src="assets/cursed.jpg" alt="The Strangers Poster">
+                </div>
+            </li>
+            <li onmouseover="changePoster('assets/IF.jpg')" onmouseout="hidePoster()"
+                onclick="changeVideo('tt11152168', 'IF', 'IF', false)">IF
+                <div class="menu-poster">
+                    <img src="assets/IF.jpg" alt="The Strangers Poster">
+                </div>
+            </li>
+            <li onmouseover="changePoster('assets/joe.jpg')" onmouseout="hidePoster()"
+                onclick="changeVideo('tt0119643', 'Meet Joe Black', 'joe', false)">Meet Joe Black
+                <div class="menu-poster">
+                    <img src="assets/joe.jpg" alt="The Strangers Poster">
+                </div>
+            </li>
             <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
                 onclick="changeVideo('tv/tt0182576', 'Family Guy', 'family-guy', false)">Family Guy
                 <div class="menu-poster">
@@ -100,15 +126,16 @@
     </div>
     <div class="content">
         <div class="video-container">
-            <iframe id="videoPlayer" src="https://vidsrc.to/embed/movie/tt15239678" title="Dune 2"></iframe>
+            <iframe id="videoPlayer" src="https://vidsrc.to/embed/tv/tt0182576" title="Family Guy"></iframe>
         </div>
-        <div class="video-title">Dune 2</div>
-        <div class="video-description">Viaje de volta ao enigmático mundo desértico de Arrakis nesta aguardada
-            sequência.</div>
+        <div class="video-title">Family Guy</div>
+        <div class="video-description">In a wacky Rhode Island town, a dysfunctional family strives to cope
+            with everyday life as they are thrown from one crazy scenario to another.</div>
         <button id="fullScreen" onclick="toggleFullScreen()">Forçar Tela Cheia</button>
     </div>
 
     <div class="footer">Para mais conteúdo, me envie uma mensagem</div>
     <script src="js/index.js"></script>
 </body>
+
 </html>
