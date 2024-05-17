@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Theater</title>
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap" rel="stylesheet">
+    <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
+</head>
+<body>
+    <div class="top-bar">
+        <div class="burger-button-container">
+            <div class="burger-button" onclick="toggleMenu()">☰</div>
+        </div>
+        Filmes e Séries grátis - Sem Anúncios
+        <div class="dark-mode-toggle">
+            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <label for="darkModeToggle">Modo Escuro</label>
+        </div>
+    </div>
+    <div class="side-menu" id="sideMenu">
+        <h2>Escolha algo para assistir</h2>
+        <ul>
+            <li onclick="changeVideo('tt15239678', 'Dune 2', 'dune')">Dune 2</li>
+            <li onclick="changeVideo('tv/tt12637874', 'Fallout', 'fallout')">Fallout</li>
+            <li onclick="changeVideo('tt11389872', 'Kingdom of the Planet of the Apes', 'apes')">Kingdom of the Planet of the Apes</li>
+
+        </ul>
+    </div>
+    <div class="content">
+        <div class="container">
+            <iframe id="videoPlayer" src="https://vidsrc.to/embed/movie/tt15239678" title="Dune 2"></iframe>
+            <div class="video-title">Dune 2</div>
+            <div class="video-description">Viaje de volta ao enigmático mundo desértico de Arrakis nesta aguardada sequência.</div>
+            <button onclick="toggleFullScreen()">Forçar tela cheia</button>
+        </div>
+    </div>
+    <div class="footer">Para mais conteúdo, me envie uma mensagem</div>
+    <script src="js/index.js"></script>
+</body>
+</html>

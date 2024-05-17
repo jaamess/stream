@@ -1,0 +1,136 @@
+body {
+    margin: 0;
+    font-family: 'Josefin Sans', Arial, sans-serif;
+    user-select: none;
+    -moz-user-select: none;
+    -webkit-user-select: none;
+    -ms-user-select: none;
+}
+
+body.dark-mode {
+    background-color: #121212;
+    color: #ffffff;
+}
+
+.top-bar {
+    background-color: #333;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    position: relative;
+}
+
+.burger-button-container {
+    position: absolute;
+    left: 10px;
+    top: 2px;
+    z-index: 1000;
+}
+
+.burger-button {
+    font-size: 24px;
+    cursor: pointer;
+    color: white;
+}
+
+.dark-mode-toggle {
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    font-size: 16px;
+}
+
+.dark-mode-toggle input {
+    margin-right: 5px;
+}
+
+.container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 20px;
+}
+
+iframe {
+    width: 100%;
+    height: 500px;
+    border: none;
+}
+
+.video-title {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    text-align: center;
+}
+
+.video-description {
+    font-size: 16px;
+    color: #555;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.footer {
+    background-color: #333;
+    color: white;
+    text-align: center;
+    padding: 5px 20px;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+}
+
+.side-menu {
+    width: 250px;
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    background-color: #333;
+    color: white;
+    padding: 20px;
+    box-shadow: 2px 0 5px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    z-index: 999;
+}
+
+.side-menu.collapsed {
+    transform: translateX(-100%);
+}
+
+
+.side-menu h2 {
+    margin-top: 0;
+    margin-left: 20px;
+}
+
+.side-menu ul {
+    list-style: none;
+    padding: 0;
+    margin-left: 20px;
+}
+
+.side-menu ul li {
+    padding: 10px;
+    cursor: pointer;
+    margin-left: -10px;
+}
+
+.side-menu ul li:hover {
+    background-color: #444;
+}
+
+.content {
+    margin-left: 200px;
+    padding: 20px;
+    transition: margin-left 0.3s ease;
+}
+
+.content.collapsed {
+    margin-left: 0;
+}
+
+button {
+    margin-top: 0;
+}
