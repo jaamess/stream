@@ -1,4 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
+    sortSideMenu();
     let summary = {};
 
     // Fetch the JSON file
@@ -59,13 +60,12 @@ document.addEventListener('DOMContentLoaded', () => {
             video.msRequestFullscreen();
         }
     };
-
-    // Function to sort the side menu alphabetically
-    function sortSideMenu() {
-        const sideMenu = document.querySelector('.side-menu ul');
-        const items = Array.from(sideMenu.getElementsByTagName('li'));
-        items.sort((a, b) => a.textContent.localeCompare(b.textContent));
-        sideMenu.innerHTML = ''; // Clear existing list
-        items.forEach(item => sideMenu.appendChild(item)); // Reappend sorted items
-    }
 });
+
+function sortSideMenu() {
+    const sideMenu = document.querySelector('.side-menu ul');
+    const items = Array.from(sideMenu.getElementsByTagName('li'));
+    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
+    sideMenu.innerHTML = ''; // Clear existing list
+    items.forEach(item => sideMenu.appendChild(item)); // Reappend sorted items
+}
