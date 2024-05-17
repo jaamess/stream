@@ -1,85 +1,83 @@
-/* styles.css */
 body {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    background-color: #f4f7f6;
-    margin: 0;
-    padding: 0;
-  }
-  
-  .container {
-    max-width: 600px;
-    margin: 50px auto;
-    padding: 20px;
-    background-color: #ffffff;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
-    border-radius: 8px;
-  }
-  
-  h1 {
-    color: #333;
-    text-align: center;
-    margin-bottom: 30px;
-  }
-  
-  form {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-  }
-  
-  input[type="file"] {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 90%;
-  }
-  
-  button {
-    background-color: #5cb85c;
-    color: white;
-    border: none;
-    padding: 10px 20px;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    border-radius: 5px;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-  }
-  
-  button:hover {
-    background-color: #4cae4c;
-  }
-  
-  #blobUrlContainer {
-    margin-top: 20px;
-  }
-  
-  #blobUrlContainer.hidden {
-    display: none;
-  }
-  
-  #blobUrl {
-    color: #5cb85c;
-    text-decoration: none;
-  }
-  
-  #blobUrl:hover {
-    text-decoration: underline;
-  }
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f4f7f6;
+  margin: 0;
+  padding: 0;
+}
 
-  /* Password page */
+.container {
+  max-width: 600px;
+  margin: 50px auto;
+  padding: 20px;
+  background-color: #ffffff;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
+}
+
+/* Password page */
 .hidden {
-    display: none;
-  }
-  
-  #loginContainer {
-    max-width: 300px;
-  }
-  
-  input[type="password"] {
-    border: 1px solid #ddd;
-    padding: 10px;
-    margin-bottom: 20px;
-    width: 90%;
-  }
-  
+  display: none;
+}
+
+#loginContainer {
+  max-width: 300px;
+}
+
+input[type="password"] {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+h1 {
+  color: #333;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+input[type="file"] {
+  border: 1px solid #ddd;
+  padding: 10px;
+  margin-bottom: 20px;
+  width: 90%;
+}
+
+button {
+  background-color: #5cb85c;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #4cae4c;
+}
+
+#blobUrlContainer {
+  margin-top: 20px;
+}
+
+#blobUrlContainer.hidden {
+  display: none;
+}
+
+#blobUrl {
+  color: #5cb85c;
+  text-decoration: none;
+}
+
+#blobUrl:hover {
+  text-decoration: underline;
+}
