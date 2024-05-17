@@ -1,3 +1,4 @@
+/* styles.css */
 @media (max-width: 768px) {
     .top-bar, .footer {
         padding: 5px 10px;
@@ -156,10 +157,23 @@ iframe {
     padding: 10px;
     cursor: pointer;
     margin-left: -10px;
+    position: relative; /* Set position relative to make the poster position absolute relative to this */
 }
 
-.side-menu ul li:hover {
-    background-color: #444;
+.menu-poster {
+    display: none;
+    position: absolute;
+    top: 0;
+    left: calc(100% + 10px);
+    width: 150px;
+    height: 225px;
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+}
+
+.side-menu ul li:hover .menu-poster {
+    display: block;
 }
 
 .content {

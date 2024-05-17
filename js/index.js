@@ -34,7 +34,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 if (summary[description]) {
                     descriptionElement.textContent = summary[description];
                 } else {
-                    descriptionElement.textContent = "Description not available.";
+                    descriptionElement.textContent = "Descrição indisponível.";
                 }
 
                 // Update the video title
@@ -78,4 +78,14 @@ function sortSideMenu() {
     items.sort((a, b) => a.textContent.localeCompare(b.textContent));
     sideMenu.innerHTML = ''; // Clear existing list
     items.forEach(item => sideMenu.appendChild(item)); // Reappend sorted items
+}
+
+function changePoster(posterPath) {
+    const poster = document.querySelector('.menu-poster img');
+    poster.src = posterPath;
+}
+
+function hidePoster() {
+    const posters = document.querySelectorAll('.menu-poster');
+    posters.forEach(poster => poster.style.display = 'none');
 }
