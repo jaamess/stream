@@ -78,14 +78,31 @@ function hidePoster() {
 }
 
 function toggleFullScreen() {
-    const videoContainer = document.querySelector('.video-container');
+    var elem = document.getElementById("videoPlayer");
     if (!document.fullscreenElement) {
-        videoContainer.requestFullscreen().catch(err => {
-            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
-        });
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+            adjustVideoContainerPadding();
+        }
     } else {
-        document.exitFullscreen();
+        if (document.exitFullscreen) {
+            document.exitFullscreen();
+        }
+        resetVideoContainerPadding();
     }
+}
+
+function adjustVideoContainerPadding() {
+    var videoContainer = document.querySelector(".video-container");
+    var aspectRatio = 9 / 16; // You may need to adjust this based on your video aspect ratio
+    var screenWidth = window.innerWidth;
+    var newPaddingTop = screenWidth * aspectRatio + "px";
+    videoContainer.style.paddingTop = newPaddingTop;
+}
+
+function resetVideoContainerPadding() {
+    var videoContainer = document.querySelector(".video-container");
+    videoContainer.style.paddingTop = "56.25%"; // Reset to default value
 }
 
 function toggleDarkMode() {
