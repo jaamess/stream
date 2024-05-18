@@ -74,6 +74,11 @@
         "title": "Wicked",
         "description": "Este filme será lançado em Novembro de 2024.",
         "poster": "assets/wicked.jpg"
+       },
+       {
+        "title": "Teen Wolf",
+        "description": "Um estudante comum do ensino médio e seu melhor amigo se envolvem em problemas, resultando em uma mordida de lobisomem. Como resultado, eles se encontram no meio de todos os tipos de dramas em Beacon Hills.",
+        "poster": "assets/wolf.jpg"
        }
    ]
 }
