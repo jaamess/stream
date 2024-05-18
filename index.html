@@ -19,9 +19,12 @@
         </div>
         Minha Coleção de Filmes e Séries
         <div class="dark-mode-toggle">
-            <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+            <label class="switch">
+                <input type="checkbox" id="darkModeToggle" onclick="toggleDarkMode()">
+                <span class="slider round"></span>
+            </label>
             <label for="darkModeToggle">Modo Escuro</label>
-        </div>
+        </div>        
     </div>
     <div class="side-menu" id="sideMenu">
         <h2>Escolha algo para assistir</h2>
@@ -91,4 +94,5 @@
     <script src="js/index.js"></script>
     <script src="js/posters.js" defer></script>
 </body>
+
 </html>
