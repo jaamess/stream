@@ -18,12 +18,12 @@
        {
            "title": "The Strangers",
            "description": "Um jovem casal hospedado em uma casa de férias isolada é aterrorizado por três agressores desconhecidos. Após voltarem de uma recepção de casamento, eles recebem uma batida na porta durante a madrugada. O que se segue é uma invasão violenta por três estranhos, com os rostos escondidos por máscaras.",
-           "poster": "path/to/strangers_poster.png"
+           "poster": "assets/strangers.jpg"
        },
        {
            "title": "Parasite",
            "description": "A ganância e a discriminação de classe ameaçam a recém-formada relação simbiótica entre a abastada família Park e o empobrecido clã Kim.",
-           "poster": "path/to/parasite_poster.png"
+           "poster": "assets/parasite.png"
        },
        {
            "title": "Nomadland",
