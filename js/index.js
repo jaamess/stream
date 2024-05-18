@@ -3,13 +3,16 @@ document.addEventListener('DOMContentLoaded', () => {
     let summary = {};
 
     // Fetch the JSON file
-    fetch('/assets/description.json')
+    fetch('/assets/database/movies.json')
         .then(response => response.json())
         .then(data => {
-            summary = data;
+            // Map the titles to their corresponding descriptions
+            data.movies.forEach(movie => {
+                summary[movie.title] = movie.description;
+            });
 
             // Define the changeVideo function after loading the JSON
-            window.changeVideo = function (source, title, description, hasCustomSubtitles = false, subFile = '', subLabel = '') {
+            window.changeVideo = function (source, title, descriptionKey, hasCustomSubtitles = false, subFile = '', subLabel = '') {
                 let video = document.getElementById('videoPlayer');
                 const shows = ['tv'];
                 let url = '';
@@ -23,69 +26,82 @@ document.addEventListener('DOMContentLoaded', () => {
 
                 // If the video has custom subtitles, append the subtitle parameters to the URL
                 if (hasCustomSubtitles) {
-                    url += `?sub.file=${encodeURIComponent(subFile)}&sub.label=${encodeURIComponent(subLabel)}`;
+                    url += `&sub=${subFile}&label=${subLabel}`;
                 }
 
+                // Update the iframe URL
                 video.src = url;
-                video.title = title;
 
-                // Update the video description
-                const descriptionElement = document.querySelector('.video-description');
-                if (summary[description]) {
-                    descriptionElement.textContent = summary[description];
-                } else {
-                    descriptionElement.textContent = "Descrição indisponível.";
-                }
-
-                // Update the video title
-                const titleElement = document.querySelector('.video-title');
-                titleElement.textContent = title;
-            };
+                // Update the video title and description
+                document.querySelector('.video-title').innerText = title;
+                document.querySelector('.video-description').innerText = summary[descriptionKey] || 'No description available.';
+            }
         })
-        .catch(error => console.error('Error loading JSON:', error));
+        .catch(error => console.error('Error loading JSON file:', error));
 
-    // Function to toggle the side menu
-    window.toggleMenu = function () {
-        const sideMenu = document.getElementById('sideMenu');
-        const content = document.querySelector('.content');
-        sideMenu.classList.toggle('collapsed');
-        content.classList.toggle('collapsed');
-    };
+    const sideMenu = document.getElementById('sideMenu');
+    const burgerButton = document.querySelector('.burger-button');
+    const darkModeToggle = document.getElementById('darkModeToggle');
 
-    // Function to toggle dark mode
-    window.toggleDarkMode = function () {
-        document.body.classList.toggle('dark-mode');
-    };
+    burgerButton.addEventListener('click', () => {
+        sideMenu.classList.toggle('open');
+    });
 
-    // Function to toggle full screen mode
-    window.toggleFullScreen = function () {
-        let video = document.getElementById('videoPlayer');
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { // Firefox
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { // Chrome, Safari and Opera
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { // IE/Edge
-            video.msRequestFullscreen();
-        }
-    };
+    // Close the side menu when a menu item is clicked
+    document.querySelectorAll('.side-menu ul li').forEach(item => {
+        item.addEventListener('click', () => {
+            sideMenu.classList.remove('open');
+        });
+    });
+
+    darkModeToggle.addEventListener('change', () => {
+        document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+    });
 });
 
-function sortSideMenu() {
-    const sideMenu = document.querySelector('.side-menu ul');
-    const items = Array.from(sideMenu.getElementsByTagName('li'));
-    items.sort((a, b) => a.textContent.localeCompare(b.textContent));
-    sideMenu.innerHTML = ''; // Clear existing list
-    items.forEach(item => sideMenu.appendChild(item)); // Reappend sorted items
+function toggleMenu() {
+    document.getElementById('sideMenu').classList.toggle('open');
 }
 
-function changePoster(posterPath) {
-    const poster = document.querySelector('.menu-poster img');
-    poster.src = posterPath;
+function changePoster(posterSrc) {
+    const poster = document.createElement('img');
+    poster.src = posterSrc;
+    poster.classList.add('poster');
+    document.querySelector('.content').appendChild(poster);
 }
 
 function hidePoster() {
-    const posters = document.querySelectorAll('.menu-poster');
-    posters.forEach(poster => poster.style.display = 'none');
+    const poster = document.querySelector('.content .poster');
+    if (poster) {
+        poster.remove();
+    }
 }
+
+function toggleFullScreen() {
+    const videoContainer = document.querySelector('.video-container');
+    if (!document.fullscreenElement) {
+        videoContainer.requestFullscreen().catch(err => {
+            alert(`Error attempting to enable full-screen mode: ${err.message} (${err.name})`);
+        });
+    } else {
+        document.exitFullscreen();
+    }
+}
+
+function toggleDarkMode() {
+    document.body.classList.toggle('dark-mode');
+}
+
+function sortSideMenu() {
+    const menu = document.querySelector('.scrollable');
+    Array.from(menu.getElementsByTagName('li'))
+        .sort((a, b) => a.textContent.localeCompare(b.textContent))
+        .forEach(li => menu.appendChild(li));
+}
+
+const burgerButton = document.querySelector('.burger-button');
+
+burgerButton.addEventListener('click', () => {
+    toggleMenu();
+});
+

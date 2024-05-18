@@ -8,8 +8,7 @@
     <link rel="stylesheet" href="css/styles.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100;200;300;400;500;600;700&display=swap" rel="stylesheet">
     <link rel="icon" href="assets/favicon.ico" type="image/x-icon">
 </head>
 
@@ -27,100 +26,50 @@
     <div class="side-menu" id="sideMenu">
         <h2>Escolha algo para assistir</h2>
         <ul class="scrollable">
-            <li onmouseover="changePoster('assets/cursed.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt18077924', 'Poolman (2024)', 'poolman', false)">
-                Poolman (2024)
-                <div class="menu-poster">
-                    <img src="assets/cursed.jpg" alt="The Strangers Poster">
-                </div>
+            <li data-poster="assets/dune2.jpg" onclick="changeVideo('tt15239678', 'Dune 2', 'Dune 2', false)">
+                Dune 2
             </li>
-            <li onmouseover="changePoster('assets/cursed.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt21251236', 'Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3', 'xxx:3', false)">
+            <li data-poster="assets/apes.jpg" onclick="changeVideo('tt11389872', 'Kingdom of the Planet of the Apes', 'Kingdom of the Planet of the Apes', false)">
+                Kingdom of the Planet of the Apes
+            </li>
+            <li data-poster="assets/fallout.jpg" onclick="changeVideo('tv/tt12637874', 'Fallout', 'Fallout')">
+                Fallout
+            </li>
+            <li data-poster="path/to/strangers_poster.png" onclick="changeVideo('tt0482606', 'The Strangers', 'The Strangers', false, '/assets/subs/the strangers (portuguese).vtt', 'Vicente')">
+                The Strangers (Sub)
+            </li>
+            <li data-poster="path/to/parasite_poster.png" onclick="changeVideo('tt6751668', 'Parasite', 'Parasite', false)">
+                Parasite
+            </li>
+            <li data-poster="assets/nomad.jpg" onclick="changeVideo('tt9770150', 'Nomadland', 'Nomadland', false)">
+                Nomadland
+            </li>
+            <li data-poster="assets/pywoman.jpg" onclick="changeVideo('tt9620292', 'Promising Young Woman', 'Promising Young Woman', false)">
+                Promising Young Woman
+            </li>
+            <li data-poster="assets/maverick.jpg" onclick="changeVideo('tt1745960', 'Top Gun: Maverick', 'Top Gun: Maverick', false)">
+                Top Gun: Maverick
+            </li>
+            <li data-poster="assets/family.jpg" onclick="changeVideo('tv/tt0182576', 'Family Guy', 'Family Guy', false)">
+                Family Guy
+            </li>
+            <li data-poster="path/to/if_poster.png" onclick="changeVideo('tt11152168', 'IF', 'IF', false)">
+                IF
+            </li>
+            <li data-poster="assets/ahs.jpg" onclick="changeVideo('tv/tt1844624', 'American Horror Story', 'American Horror Story', false)">
+                American Horror Story
+            </li>
+            <li data-poster="path/to/poolman_poster.png" onclick="changeVideo('tt18077924', 'Poolman', 'Poolman', false)">
+                Poolman
+            </li>
+            <li data-poster="assets/xxx3.jpg" onclick="changeVideo('tt21251236', 'Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3', 'Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3', false)">
                 Cursed Psychic Video XXX (Triple X) Masterpiece Selection 3
-                <div class="menu-poster">
-                    <img src="assets/cursed.jpg" alt="The Strangers Poster">
-                </div>
             </li>
-            <li onmouseover="changePoster('assets/IF.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt11152168', 'IF', 'IF', false)">IF
-                <div class="menu-poster">
-                    <img src="assets/IF.jpg" alt="The Strangers Poster">
-                </div>
+            <li data-poster="assets/joe.jpg" onclick="changeVideo('tt0119643', 'Meet Joe Black', 'Meet Joe Black', false)">
+                Meet Joe Black
             </li>
-            <li onmouseover="changePoster('assets/joe.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt0119643', 'Meet Joe Black', 'joe', false)">Meet Joe Black
-                <div class="menu-poster">
-                    <img src="assets/joe.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tv/tt0182576', 'Family Guy', 'family-guy', false)">Family Guy
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt1745960', 'Top Gun: Maverick', 'maverick', false)">Top Gun: Maverick
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt6751668', 'Parasite', 'parasite', false)">Parasite
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt9620292', 'Promising Young Woman', 'promising', false)">Promising Young Woman
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt9770150', 'Nomadland', 'nomadland', false)">Nomadland
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/dune2.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt15239678', 'Dune 2', 'dune', false)">Dune 2
-                <div class="menu-poster">
-                    <img src="assets/dune2.jpg" alt="Dune 2 Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/the_strangers.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt0482606', 'The Strangers', 'strangers', false, '/assets/subs/the strangers (portuguese).vtt', 'Vicente')">
-                The
-                Strangers (Sub)
-                <div class="menu-poster">
-                    <img src="assets/the_strangers.jpg" alt="The Strangers Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/fallout.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tv/tt12637874', 'Fallout', 'fallout')">Fallout
-                <div class="menu-poster">
-                    <img src="assets/fallout.jpg" alt="Fallout Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/apes.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt11389872', 'Kingdom of the Planet of the Apes', 'apes')">Kingdom of the Planet
-                of the Apes
-                <div class="menu-poster">
-                    <img src="assets/apes.jpg" alt="Kingdom of the Planet of the Apes Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/ahs.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tv/tt1844624', 'AHS', 'AHS')">American Horror Story
-                <div class="menu-poster">
-                    <img src="assets/ahs.jpg" alt="American Horror Story Poster">
-                </div>
-            </li>
-            <li onmouseover="changePoster('assets/wicked.jpg')" onmouseout="hidePoster()"
-                onclick="changeVideo('tt1262426', 'Wicked (Em breve)', 'wicked', false)">Wicked (Em breve)
-                <div class="menu-poster">
-                    <img src="assets/wicked.jpeg" alt="Wicked Poster">
-                </div>
+            <li data-poster="assets/wicked.jpg" onclick="changeVideo('tt1262426', 'Wicked', 'Wicked', false)">
+                Wicked (Em breve)
             </li>
         </ul>
     </div>
@@ -129,13 +78,13 @@
             <iframe id="videoPlayer" src="https://vidsrc.to/embed/tv/tt0182576" title="Family Guy"></iframe>
         </div>
         <div class="video-title">Family Guy</div>
-        <div class="video-description">In a wacky Rhode Island town, a dysfunctional family strives to cope
-            with everyday life as they are thrown from one crazy scenario to another.</div>
+        <div class="video-description">In a wacky Rhode Island town, a dysfunctional family strives to cope with everyday life as they are thrown from one crazy scenario to another.</div>
         <button id="fullScreen" onclick="toggleFullScreen()">Forçar Tela Cheia</button>
     </div>
 
     <div class="footer">Para mais conteúdo, me envie uma mensagem</div>
     <script src="js/index.js"></script>
+    <script src="js/posters.js" defer></script>
 </body>
 
 </html>
