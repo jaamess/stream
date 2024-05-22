@@ -76,6 +76,11 @@
         "poster": "assets/wicked.jpg"
        },
        {
+        "title": "The Simpsons",
+        "description": "The satiric adventures of a working-class family in the misfit city of Springfield.",
+        "poster": "assets/simpsons.jpg"
+       },
+       {
         "title": "Teen Wolf",
         "description": "Um estudante comum do ensino médio e seu melhor amigo se envolvem em problemas, resultando em uma mordida de lobisomem. Como resultado, eles se encontram no meio de todos os tipos de dramas em Beacon Hills.",
         "poster": "assets/wolf.jpg"
