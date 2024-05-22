@@ -94,7 +94,7 @@ function toggleFullScreen() {
 
 function adjustVideoContainerPadding() {
     var videoContainer = document.querySelector(".video-container");
-    var aspectRatio = 9 / 16; // You may need to adjust this based on your video aspect ratio
+    var aspectRatio = 9 / 16;
     var screenWidth = window.innerWidth;
     var newPaddingTop = screenWidth * aspectRatio + "px";
     videoContainer.style.paddingTop = newPaddingTop;
