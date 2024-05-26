@@ -84,6 +84,11 @@
         "title": "Teen Wolf",
         "description": "Um estudante comum do ensino médio e seu melhor amigo se envolvem em problemas, resultando em uma mordida de lobisomem. Como resultado, eles se encontram no meio de todos os tipos de dramas em Beacon Hills.",
         "poster": "assets/wolf.jpg"
+       },
+       {
+        "title": "South Park: The End of Obesity",
+        "description": "New weight loss medicine creates a frenzy in South Park. Cartman's denied access leads the kids to take action.",
+        "poster": "assets/wolf.jpg"
        }
    ]
 }
