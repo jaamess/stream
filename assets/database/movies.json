@@ -88,7 +88,12 @@
        {
         "title": "South Park: The End of Obesity",
         "description": "New weight loss medicine creates a frenzy in South Park. Cartman's denied access leads the kids to take action.",
-        "poster": "assets/wolf.jpg"
+        "poster": ""
+       },
+       {
+        "title": "South Park",
+        "description": "Follows the misadventures of four irreverent grade-schoolers in the quiet, dysfunctional town of South Park, Colorado.",
+        "poster": ""
        }
    ]
 }
