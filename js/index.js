@@ -1,16 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // Prevent annoying video source ads
-    $('a').on('click', function (e) {
-        const link = this.href;
-        const currentDomain = window.location.hostname;
-        const linkDomain = new URL(link).hostname;
-
-        if (linkDomain !== currentDomain) {
-            e.preventDefault();
-        }
-    });
-
-
     sortSideMenu();
     let summary = {};
 
@@ -68,6 +56,22 @@ document.addEventListener('DOMContentLoaded', () => {
 
     darkModeToggle.addEventListener('change', () => {
         document.body.classList.toggle('dark-mode', darkModeToggle.checked);
+    });
+
+    // Prevent navigation on iframe click
+    const iframeBlocker = document.querySelector('.iframe-click-blocker');
+    iframeBlocker.addEventListener('click', (e) => {
+        e.preventDefault();
+        e.stopPropagation();
+    });
+
+    const videoPlayer = document.getElementById('videoPlayer');
+    videoPlayer.addEventListener('load', () => {
+        const iframeDoc = videoPlayer.contentDocument || videoPlayer.contentWindow.document;
+        iframeDoc.addEventListener('click', (e) => {
+            e.preventDefault();
+            e.stopPropagation();
+        });
     });
 });
 
