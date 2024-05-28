@@ -1,4 +1,16 @@
 document.addEventListener('DOMContentLoaded', () => {
+    // Prevent annoying video source ads
+    $('a').on('click', function (e) {
+        const link = this.href;
+        const currentDomain = window.location.hostname;
+        const linkDomain = new URL(link).hostname;
+
+        if (linkDomain !== currentDomain) {
+            e.preventDefault();
+        }
+    });
+
+
     sortSideMenu();
     let summary = {};
 
@@ -121,4 +133,3 @@ const burgerButton = document.querySelector('.burger-button');
 burgerButton.addEventListener('click', () => {
     toggleMenu();
 });
-
