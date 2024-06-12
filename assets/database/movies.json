@@ -107,6 +107,10 @@
         "title": "Coco",
         "description": "Aspiring musician Miguel, confronted with his family's ancestral ban on music, enters the Land of the Dead to find his great-great-grandfather, a legendary singer.",
         "poster": "assets/coco.jpg"
+       },
+       {
+        "title": "Arcane",
+        "description": "Set in Utopian Piltover and the oppressed underground of Zaun, the story follows the origins of two iconic League champions-and the power that will tear them apart."
        }
    ]
 }
