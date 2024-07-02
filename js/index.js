@@ -2,37 +2,30 @@ document.addEventListener('DOMContentLoaded', () => {
     sortSideMenu();
     let summary = {};
 
-    // Fetch the JSON file
     fetch('/assets/database/movies.json')
         .then(response => response.json())
         .then(data => {
-            // Map the titles to their corresponding descriptions
             data.movies.forEach(movie => {
                 summary[movie.title] = movie.description;
             });
 
-            // Define the changeVideo function after loading the JSON
             window.changeVideo = function (source, title, descriptionKey, hasCustomSubtitles = false, subFile = '', subLabel = '') {
                 let video = document.getElementById('videoPlayer');
                 const shows = ['tv'];
                 let url = '';
 
-                // Check if the source is a TV show or a movie and construct the base URL
                 if (!shows.some(show => source.includes(show))) {
                     url = `https://vidsrc.to/embed/movie/${source}`;
                 } else {
                     url = `https://vidsrc.to/embed/${source}`;
                 }
 
-                // If the video has custom subtitles, append the subtitle parameters to the URL
                 if (hasCustomSubtitles) {
                     url += `&sub=${subFile}&label=${subLabel}`;
                 }
 
-                // Update the iframe URL
                 video.src = url;
 
-                // Update the video title and description
                 document.querySelector('.video-title').innerText = title;
                 document.querySelector('.video-description').innerText = summary[descriptionKey] || 'No description available.';
             }
@@ -47,7 +40,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sideMenu.classList.toggle('open');
     });
 
-    // Close the side menu when a menu item is clicked
     document.querySelectorAll('.side-menu ul li').forEach(item => {
         item.addEventListener('click', () => {
             sideMenu.classList.remove('open');
